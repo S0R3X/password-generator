@@ -1,0 +1,13 @@
+@import "./styles/variables.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: $font-main;
+  font-size: $default-size;
+  color: $white;
+}
