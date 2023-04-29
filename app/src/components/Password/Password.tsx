@@ -1,5 +1,5 @@
+import styles from "./Password.module.scss";
+
 export const Password = () => {
-	return (
-		<div>Password</div>
-	)
-}
+  return <section className={styles.generatedPassword}>Password</section>;
+};

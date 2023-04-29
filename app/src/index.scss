@@ -6,6 +6,14 @@
   box-sizing: border-box;
 }
 
+#root {
+	height: 100vh;
+	background: $bg-dark;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 html {
   font-family: $font-main;
   font-size: $default-size;

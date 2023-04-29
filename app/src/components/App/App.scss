@@ -1,6 +1,9 @@
 @import "../../styles/variables.scss";
 
 .app {
-  height: 100vh;
-	background: $bg-dark;
+	width: 45rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 2rem;
 }

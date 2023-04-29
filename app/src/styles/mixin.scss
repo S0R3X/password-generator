@@ -1,0 +1,9 @@
+@import "./variables.scss";
+
+// Item App
+@mixin item-app($color: $white, $bg: $bg-dark-light, $padding: 2rem) {
+  background: $bg;
+  color: $color;
+  padding: $padding;
+  width: 100%;
+}

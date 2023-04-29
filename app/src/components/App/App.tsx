@@ -1,12 +1,12 @@
 import { Password } from "../Password/Password";
 import { SettingsForm } from "../SettingsForm/SettingsForm";
-import { Tittle } from "../Title/Tittle";
+import { Title } from "../Title/Title";
 import "./App.scss";
 
 function App() {
   return (
     <div className="app">
-      <Tittle />
+      <Title />
       <Password />
       <SettingsForm />
     </div>

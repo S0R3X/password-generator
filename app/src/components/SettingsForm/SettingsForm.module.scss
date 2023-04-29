@@ -1,0 +1,21 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixin.scss";
+
+.settings-form {
+  @include item-app($color: $white);
+}
+
+.character-length {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.character-length__value {
+  color: $primary;
+  font-size: 1.5rem;
+}
+
+.fdas {
+  color: black;
+}
