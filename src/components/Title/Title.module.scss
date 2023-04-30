@@ -2,8 +2,12 @@
 @import "../../styles/mixin.scss";
 
 .title {
-  @include item-app($color: $grey, $bg: none, $padding: none);
+  @include item-app(
+    $color: $grey,
+    $bg: none,
+    $padding: none,
+    $font-size: 1.5rem
+  );
 
-  font-size: 1.3rem;
   text-align: center;
 }

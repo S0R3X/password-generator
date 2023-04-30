@@ -4,10 +4,11 @@
 .container-progress-bar {
   display: flex;
   align-items: center;
-  height: 1rem;
+  height: 0.9rem;
   width: 100%;
   border-radius: 5rem;
-  overflow: hidden;
+  // overflow: hidden;
+  position: relative;
 }
 
 .progress-bar {
@@ -17,17 +18,28 @@
   border-radius: 5rem;
   background: $bg-dark;
   outline: none;
+  cursor: pointer;
+}
+
+.progress-bar-line {
+  position: absolute;
+  z-index: 0;
+  height: 100%;
+  background: $primary;
+  border-radius: 5rem;
 }
 
 .progress-bar::-webkit-slider-thumb {
   appearance: none;
-  width: 1rem;
-  height: 1rem;
+  width: 2rem;
+  height: 2rem;
   background: $bg-dark;
-  border: solid 2px $white;
+  border: solid 1px $primary;
   cursor: pointer;
   border-radius: 50%;
-  box-shadow: -25rem 0 0 24.5rem $primary;
+  // box-shadow: -25rem 0 0 24.5rem $primary;
+  position: relative;
+  z-index: 1;
 }
 
 .progress-bar::-moz-range-thumb {
@@ -38,5 +50,7 @@
   border: solid 2px $white;
   cursor: pointer;
   border-radius: 50%;
-  box-shadow: -25rem 0 0 24.5rem $primary;
+  // box-shadow: -25rem 0 0 24.5rem $primary;
+  position: relative;
+  z-index: 1;
 }

@@ -1,11 +1,11 @@
 import { Password } from "../Password/Password";
 import { SettingsForm } from "../SettingsForm/SettingsForm";
 import { Title } from "../Title/Title";
-import "./App.scss";
+import styles from "./App.module.scss";
 
 function App() {
   return (
-    <div className="app">
+    <div className={styles.app}>
       <Title />
       <Password />
       <SettingsForm />

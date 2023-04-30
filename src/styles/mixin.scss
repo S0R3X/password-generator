@@ -1,7 +1,13 @@
 @import "./variables.scss";
 
 // Item App
-@mixin item-app($color: $white, $bg: $bg-dark-light, $padding: 2rem) {
+@mixin item-app(
+  $color: $white,
+  $bg: $bg-dark-light,
+  $padding: 2rem,
+  $font-size: 1.2rem
+) {
+  font-size: $font-size;
   background: $bg;
   color: $color;
   padding: $padding;
