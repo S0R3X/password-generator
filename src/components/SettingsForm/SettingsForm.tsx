@@ -18,12 +18,13 @@ export const SettingsForm = (): JSX.Element => {
   useEffect(() => {
     // Update the document title using the browser API
   }, [upperCaseLetters, lowerCaseLetters, numbers, symbols]);
-  
+
   return (
     <section className={styles["settings-form"]}>
       <CharacterLength />
       <ChangeCharacterLength />
       <ChangePasswordSettings />
+      <div></div>
     </section>
   );
 };
