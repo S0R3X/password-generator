@@ -1,3 +1,57 @@
 @import "../../../styles/variables.scss";
 @import "../../../styles/mixin.scss";
 
+.label {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.select-button {
+  display: none;
+}
+
+.select-button-fake {
+  display: inline-block;
+  width: 1.7rem;
+  height: 1.7rem;
+  border: solid 1px $white;
+  position: relative;
+  transition: 0.2s;
+  cursor: pointer;
+
+  &:before {
+    content: "";
+    position: absolute;
+    display: block;
+    clip-path: polygon(26% 44%, 39% 61%, 75% 13%, 96% 13%, 39% 92%, 6% 44%);
+    width: 1rem;
+    height: 1rem;
+    top: 52%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: none;
+    opacity: 0;
+    transition: 0.2s;
+  }
+
+  &:hover {
+    border: solid 1px $primary;
+  }
+}
+
+.select-button:checked + .select-button-fake::before {
+  opacity: 1;
+  background: $bg-dark-light;
+}
+
+.select-button:checked + .select-button-fake {
+  background: $primary;
+  border: solid 1px $primary;
+}
+
+.text {
+  cursor: pointer;
+}
+
