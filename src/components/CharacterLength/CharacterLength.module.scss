@@ -1,9 +1,4 @@
 @import "../../styles/variables.scss";
-@import "../../styles/mixin.scss";
-
-.settings-form {
-  @include item-app($color: $white);
-}
 
 .character-length {
   display: flex;
@@ -16,6 +11,3 @@
   font-size: 1.5rem;
 }
 
-.fdas {
-  color: black;
-}

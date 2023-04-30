@@ -1,0 +1,10 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixin.scss";
+
+.settings-form {
+  @include item-app($color: $white);
+
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
