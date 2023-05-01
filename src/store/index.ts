@@ -1,11 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
 import passwordSettingsReducer from "./reducers/passwordSettingsSlice";
 import passwordStrengthSlice from "./reducers/passwordStrengthSlice";
+import passwordGenerationSlice from "./reducers/passwordGenerationSlice";
 
 const store = configureStore({
   reducer: {
     passwordSettings: passwordSettingsReducer,
     passwordStrength: passwordStrengthSlice,
+    passwordGeneration: passwordGenerationSlice,
   },
 });
 

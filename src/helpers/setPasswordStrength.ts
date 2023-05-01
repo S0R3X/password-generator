@@ -1,12 +1,12 @@
-import { PasswordIncludes } from "../interfaces/PasswordIncludes";
+import { PasswordSettingsState } from "../interfaces/PasswordSettingsState";
 import { PasswordStregthValueType } from "../types/passwordStrength";
 
 export const setPasswordStrength = (
-  characterLength: number,
-  passwordIncludes: PasswordIncludes
+  passwordSettings: PasswordSettingsState,
 ): PasswordStregthValueType => {
+  const { characterLength, includes } = passwordSettings;
   let countIncludes = 0;
-  for (const value of Object.values(passwordIncludes)) {
+  for (const value of Object.values(includes)) {
     if (value) countIncludes++;
   }
   if (!characterLength || !countIncludes) {

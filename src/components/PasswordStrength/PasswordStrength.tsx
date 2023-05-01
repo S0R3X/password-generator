@@ -8,26 +8,19 @@ export const PasswordStrength = (): JSX.Element => {
   const { strengthIndicators, strengthValue } = useAppSelector(
     (state) => state.passwordStrength
   );
-
-  const { characterLength, includes: passwordIncludes } = useAppSelector(
-    (state) => state.passwordSettings
-  );
-
+  const { passwordSettings } = useAppSelector((state) => state);
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    const passwordStrength = setPasswordStrength(
-      characterLength,
-      passwordIncludes
-    );
+    const passwordStrength = setPasswordStrength(passwordSettings);
     dispatch(changeStrengValue(passwordStrength));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [
-    passwordIncludes.upperCaseLetters,
-    passwordIncludes.lowerCaseLetters,
-    passwordIncludes.numbers,
-    passwordIncludes.symbols,
-    characterLength,
+    passwordSettings.includes.upperCaseLetters,
+    passwordSettings.includes.lowerCaseLetters,
+    passwordSettings.includes.numbers,
+    passwordSettings.includes.symbols,
+    passwordSettings.characterLength,
   ]);
 
   return (
