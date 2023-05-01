@@ -12,9 +12,9 @@ export const SelectButton = ({
         onChange={setChecked}
         checked={checked}
         type="checkbox"
-        className={styles["select-button"]}
+        className={styles["check-box"]}
       />
-      <span className={styles["select-button-fake"]}></span>
+      <span className={styles["check-box-fake"]}></span>
       <span className={styles.text}>{children}</span>
     </label>
   );

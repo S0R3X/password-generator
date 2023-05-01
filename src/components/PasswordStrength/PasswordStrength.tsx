@@ -5,37 +5,30 @@ import { setPasswordStrength } from "../../helpers/setPasswordStrength";
 import { changeStrengValue } from "../../store/reducers/passwordStrengthSlice";
 
 export const PasswordStrength = (): JSX.Element => {
-  const strengthIndicators = useAppSelector(
-    (state) => state.passwordStrength.strengthIndicators
-  );
-  const strengthValue = useAppSelector(
-    (state) => state.passwordStrength.stregthValue
+  const { strengthIndicators, strengthValue } = useAppSelector(
+    (state) => state.passwordStrength
   );
 
-  const upperCaseLetters = useAppSelector(
-    (state) => state.passwordSettings.upperCaseLetters
-  );
-  const lowerCaseLetters = useAppSelector(
-    (state) => state.passwordSettings.lowerCaseLetters
-  );
-  const numbers = useAppSelector((state) => state.passwordSettings.numbers);
-  const symbols = useAppSelector((state) => state.passwordSettings.symbols);
-  const characterLength = useAppSelector(
-    (state) => state.passwordSettings.characterLength
+  const { characterLength, includes: passwordIncludes } = useAppSelector(
+    (state) => state.passwordSettings
   );
 
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    const passwordStrength = setPasswordStrength(characterLength, [
-      upperCaseLetters,
-      lowerCaseLetters,
-      numbers,
-      symbols,
-    ]);
+    const passwordStrength = setPasswordStrength(
+      characterLength,
+      passwordIncludes
+    );
     dispatch(changeStrengValue(passwordStrength));
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [upperCaseLetters, lowerCaseLetters, numbers, symbols, characterLength]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [
+    passwordIncludes.upperCaseLetters,
+    passwordIncludes.lowerCaseLetters,
+    passwordIncludes.numbers,
+    passwordIncludes.symbols,
+    characterLength,
+  ]);
 
   return (
     <div className={styles["password-strength"]}>

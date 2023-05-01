@@ -1,6 +1,6 @@
 import { PasswordStregthValueType } from "../types/passwordStrength";
 
 export interface PasswordStregthState {
-  stregthValue: PasswordStregthValueType;
+  strengthValue: PasswordStregthValueType;
   strengthIndicators: [boolean, boolean, boolean, boolean];
 }

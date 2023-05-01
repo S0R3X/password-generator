@@ -8,7 +8,7 @@ export const ProgressBar = ({
   ...props
 }: ProgressBarProps): JSX.Element => {
   return (
-    <div className={styles["container-progress-bar"]}>
+    <div className={styles.container}>
       <input
         type="range"
         className={styles["progress-bar"]}

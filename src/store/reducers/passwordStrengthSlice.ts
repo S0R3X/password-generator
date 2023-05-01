@@ -3,7 +3,7 @@ import { PasswordStregthValueType } from "../../types/passwordStrength";
 import { PasswordStregthState } from "../../interfaces/PasswordStregthState";
 
 const initialState: PasswordStregthState = {
-  stregthValue: "medium",
+  strengthValue: "medium",
   strengthIndicators: [true, true, true, false],
 };
 
@@ -12,7 +12,7 @@ const passwordStregthSlice = createSlice({
   initialState,
   reducers: {
     changeStrengValue(state, action: PayloadAction<PasswordStregthValueType>) {
-      state.stregthValue = action.payload;
+      state.strengthValue = action.payload;
       switch (action.payload) {
         case "very low":
           state.strengthIndicators = [true, false, false, false];

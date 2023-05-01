@@ -9,41 +9,42 @@ import {
 import styles from "./ChangePasswordSettings.module.scss";
 
 export const ChangePasswordSettings = (): JSX.Element => {
-  const upperCaseLetters = useAppSelector(
-    (state) => state.passwordSettings.upperCaseLetters
+  const passwordIncludes = useAppSelector(
+    (state) => state.passwordSettings.includes
   );
-  const lowerCaseLetters = useAppSelector(
-    (state) => state.passwordSettings.lowerCaseLetters
-  );
-
-  const numbers = useAppSelector((state) => state.passwordSettings.numbers);
-  const symbols = useAppSelector((state) => state.passwordSettings.symbols);
 
   const dispatch = useAppDispatch();
 
   return (
-    <div className={styles["change-password-settings"]}>
+    <div className={styles.container}>
       <SelectButton
-        checked={upperCaseLetters}
-        setChecked={() => dispatch(includeUpperCaseLetters(!upperCaseLetters))}
-      >
-        Include Uppercase Letters
-      </SelectButton>
-      <SelectButton
-        checked={lowerCaseLetters}
-        setChecked={() => dispatch(includeLowerCaseLetters(!lowerCaseLetters))}
+        checked={passwordIncludes.lowerCaseLetters}
+        setChecked={() =>
+          dispatch(includeLowerCaseLetters(!passwordIncludes.lowerCaseLetters))
+        }
       >
         Include Lowercase Letters
       </SelectButton>
+
       <SelectButton
-        checked={numbers}
-        setChecked={() => dispatch(includeNumbers(!numbers))}
+        checked={passwordIncludes.upperCaseLetters}
+        setChecked={() =>
+          dispatch(includeUpperCaseLetters(!passwordIncludes.upperCaseLetters))
+        }
+      >
+        Include Uppercase Letters
+      </SelectButton>
+
+      <SelectButton
+        checked={passwordIncludes.numbers}
+        setChecked={() => dispatch(includeNumbers(!passwordIncludes.numbers))}
       >
         Include Numbers
       </SelectButton>
+
       <SelectButton
-        checked={symbols}
-        setChecked={() => dispatch(includeSymbols(!symbols))}
+        checked={passwordIncludes.symbols}
+        setChecked={() => dispatch(includeSymbols(!passwordIncludes.symbols))}
       >
         Include Symbols
       </SelectButton>

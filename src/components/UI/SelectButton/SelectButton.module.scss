@@ -8,11 +8,11 @@
   gap: 2rem;
 }
 
-.select-button {
+.check-box {
   display: none;
 }
 
-.select-button-fake {
+.check-box-fake {
   display: inline-block;
   width: 1.7rem;
   height: 1.7rem;
@@ -41,12 +41,12 @@
   }
 }
 
-.select-button:checked + .select-button-fake::before {
+.check-box:checked + .check-box-fake::before {
   opacity: 1;
   background: $bg-dark-light;
 }
 
-.select-button:checked + .select-button-fake {
+.check-box:checked + .check-box-fake {
   background: $primary;
   border: solid 1px $primary;
 }
@@ -54,5 +54,3 @@
 .text {
   cursor: pointer;
 }
-
-

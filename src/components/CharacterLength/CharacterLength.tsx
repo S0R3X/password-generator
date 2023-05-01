@@ -6,9 +6,9 @@ export const CharacterLength = (): JSX.Element => {
     (state) => state.passwordSettings.characterLength
   );
   return (
-    <div className={styles["character-length"]}>
+    <div className={styles.container}>
       Character length
-      <div className={styles["character-length__value"]}>{characterLength}</div>
+      <div className={styles.value}>{characterLength}</div>
     </div>
   );
 };

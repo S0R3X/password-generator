@@ -3,10 +3,12 @@ import { PasswordSettingsState } from "../../interfaces/PasswordSettingsState";
 
 const initialState: PasswordSettingsState = {
   characterLength: 10,
-  upperCaseLetters: false,
-  lowerCaseLetters: true,
-  numbers: true,
-  symbols: false,
+  includes: {
+    upperCaseLetters: false,
+    lowerCaseLetters: true,
+    numbers: true,
+    symbols: false,
+  },
 };
 
 const passwordSettingsSlice = createSlice({
@@ -17,16 +19,16 @@ const passwordSettingsSlice = createSlice({
       state.characterLength = action.payload;
     },
     includeUpperCaseLetters(state, action: PayloadAction<boolean>) {
-      state.upperCaseLetters = action.payload;
+      state.includes.upperCaseLetters = action.payload;
     },
     includeLowerCaseLetters(state, action: PayloadAction<boolean>) {
-      state.lowerCaseLetters = action.payload;
+      state.includes.lowerCaseLetters = action.payload;
     },
     includeNumbers(state, action: PayloadAction<boolean>) {
-      state.numbers = action.payload;
+      state.includes.numbers = action.payload;
     },
     includeSymbols(state, action: PayloadAction<boolean>) {
-      state.symbols = action.payload;
+      state.includes.symbols = action.payload;
     },
   },
 });

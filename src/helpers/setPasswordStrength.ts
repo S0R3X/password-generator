@@ -1,10 +1,14 @@
+import { PasswordIncludes } from "../interfaces/PasswordIncludes";
 import { PasswordStregthValueType } from "../types/passwordStrength";
 
 export const setPasswordStrength = (
   characterLength: number,
-  includes: [boolean, boolean, boolean, boolean]
+  passwordIncludes: PasswordIncludes
 ): PasswordStregthValueType => {
-  const countIncludes = includes.reduce((acc, el) => acc + Number(el), 0);
+  let countIncludes = 0;
+  for (const value of Object.values(passwordIncludes)) {
+    if (value) countIncludes++;
+  }
   if (!characterLength || !countIncludes) {
     return undefined;
   } else if (characterLength <= 4) {

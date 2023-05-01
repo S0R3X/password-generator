@@ -1,13 +1,12 @@
 @import "../../styles/variables.scss";
 
-.character-length {
+.container {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.character-length__value {
+.value {
   color: $primary;
   font-size: 1.7rem;
 }
-
