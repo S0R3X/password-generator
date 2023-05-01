@@ -1,6 +1,6 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
-interface passwordSettingsState {
+interface PasswordSettingsState {
   characterLength: number;
   upperCaseLetters: boolean;
   lowerCaseLetters: boolean;
@@ -8,7 +8,7 @@ interface passwordSettingsState {
   symbols: boolean;
 }
 
-const initialState: passwordSettingsState = {
+const initialState: PasswordSettingsState = {
   characterLength: 10,
   upperCaseLetters: false,
   lowerCaseLetters: false,
