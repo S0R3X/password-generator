@@ -5,6 +5,7 @@ import { CharacterLength } from "../CharacterLength/CharacterLength";
 import styles from "./SettingsForm.module.scss";
 import { useAppSelector } from "../../hooks/redux";
 import { PasswordStrength } from "../PasswordStrength/PasswordStrength";
+import { ButtonGenerate } from "../ButtonGenerate/ButtonGenerate";
 
 export const SettingsForm = (): JSX.Element => {
   const upperCaseLetters = useAppSelector(
@@ -26,6 +27,7 @@ export const SettingsForm = (): JSX.Element => {
       <ChangeCharacterLength />
       <ChangePasswordSettings />
       <PasswordStrength />
+      <ButtonGenerate />
     </section>
   );
 };

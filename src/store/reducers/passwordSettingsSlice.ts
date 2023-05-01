@@ -1,18 +1,11 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-
-interface PasswordSettingsState {
-  characterLength: number;
-  upperCaseLetters: boolean;
-  lowerCaseLetters: boolean;
-  numbers: boolean;
-  symbols: boolean;
-}
+import { PasswordSettingsState } from "../../interfaces/PasswordSettingsState";
 
 const initialState: PasswordSettingsState = {
   characterLength: 10,
   upperCaseLetters: false,
-  lowerCaseLetters: false,
-  numbers: false,
+  lowerCaseLetters: true,
+  numbers: true,
   symbols: false,
 };
 

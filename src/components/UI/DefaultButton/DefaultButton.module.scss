@@ -1,0 +1,22 @@
+@import "../../../styles/variables.scss";
+
+.btn {
+  display: block;
+  padding: 1.7rem;
+  color: $bg-dark-light;
+  background: $primary;
+  font-size: 1.3rem;
+  font-family: $font-main;
+  transition: 0.2s;
+  border: solid 1px $primary;
+  cursor: pointer;
+
+  &:not([disabled]):hover {
+    color: $primary;
+    background: $bg-dark-light;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+}

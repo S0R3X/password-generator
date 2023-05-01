@@ -1,11 +1,6 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-
-type StregthValueType = "very low" | "low" | "medium" | "hard" | undefined;
-
-interface PasswordStregthState {
-  stregthValue: StregthValueType;
-  strengthIndicators: boolean[];
-}
+import { PasswordStregthValueType } from "../../types/passwordStrength";
+import { PasswordStregthState } from "../../interfaces/PasswordStregthState";
 
 const initialState: PasswordStregthState = {
   stregthValue: "medium",
@@ -16,7 +11,7 @@ const passwordStregthSlice = createSlice({
   name: "passwordStregth",
   initialState,
   reducers: {
-    changeStrengValue(state, action: PayloadAction<StregthValueType>) {
+    changeStrengValue(state, action: PayloadAction<PasswordStregthValueType>) {
       state.stregthValue = action.payload;
       switch (action.payload) {
         case "very low":
@@ -31,7 +26,7 @@ const passwordStregthSlice = createSlice({
           state.strengthIndicators = [true, true, true, false];
           break;
 
-        case "hard":
+        case "high":
           state.strengthIndicators = [true, true, true, true];
           break;
 
@@ -46,6 +41,6 @@ const passwordStregthSlice = createSlice({
   },
 });
 
-export const {changeStrengValue} = passwordStregthSlice.actions;
+export const { changeStrengValue } = passwordStregthSlice.actions;
 
 export default passwordStregthSlice.reducer;
