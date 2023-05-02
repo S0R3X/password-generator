@@ -1,9 +1,7 @@
-import { useEffect } from "react";
 import { ChangeCharacterLength } from "../ChangeCharacterLength/ChangeCharacterLength";
 import { ChangePasswordSettings } from "../ChangePasswordSettings/ChangePasswordSettings";
 import { CharacterLength } from "../CharacterLength/CharacterLength";
 import styles from "./SettingsForm.module.scss";
-import { useAppSelector } from "../../hooks/redux";
 import { PasswordStrength } from "../PasswordStrength/PasswordStrength";
 import { ButtonGenerate } from "../ButtonGenerate/ButtonGenerate";
 
