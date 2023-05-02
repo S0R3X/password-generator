@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { passwordGeneration } from "../../helpers/passwordGeneration";
 import { useAppDispatch, useAppSelector } from "../../hooks/redux";
 import { DefaultButton } from "../UI/DefaultButton/DefaultButton";
