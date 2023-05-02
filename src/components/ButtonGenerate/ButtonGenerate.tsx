@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { passwordGeneration } from "../../helpers/passwordGeneration";
 import { useAppDispatch, useAppSelector } from "../../hooks/redux";
 import { DefaultButton } from "../UI/DefaultButton/DefaultButton";
@@ -6,6 +6,7 @@ import {
   setPassword,
   checkCurrectGeneration,
 } from "../../store/reducers/passwordGenerationSlice";
+import { IoMdArrowRoundForward } from "react-icons/io";
 import styles from "./ButtonGenerate.module.scss";
 
 export const ButtonGenerate = () => {
@@ -41,7 +42,7 @@ export const ButtonGenerate = () => {
     >
       <div className={styles.container}>
         Generate
-        <span className={styles.arrow}>🡲</span>
+        <IoMdArrowRoundForward className={styles.arrow} />
       </div>
     </DefaultButton>
   );
