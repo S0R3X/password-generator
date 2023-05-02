@@ -8,19 +8,6 @@ import { PasswordStrength } from "../PasswordStrength/PasswordStrength";
 import { ButtonGenerate } from "../ButtonGenerate/ButtonGenerate";
 
 export const SettingsForm = (): JSX.Element => {
-  const upperCaseLetters = useAppSelector(
-    (state) => state.passwordSettings.upperCaseLetters
-  );
-  const lowerCaseLetters = useAppSelector(
-    (state) => state.passwordSettings.lowerCaseLetters
-  );
-
-  const numbers = useAppSelector((state) => state.passwordSettings.numbers);
-  const symbols = useAppSelector((state) => state.passwordSettings.symbols);
-  useEffect(() => {
-    // Update the document title using the browser API
-  }, [upperCaseLetters, lowerCaseLetters, numbers, symbols]);
-
   return (
     <section className={styles["settings-form"]}>
       <CharacterLength />

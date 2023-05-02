@@ -7,8 +7,8 @@
 }
 
 #root {
-	height: 100vh;
-	background: $bg-dark;
+  height: 100vh;
+  background: $bg-dark;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,4 +18,13 @@ html {
   font-family: $font-main;
   font-size: $default-size;
   color: $white;
+
+  //Media
+  @media (max-width: 600px) {
+    font-size: $low-size;
+  }
+
+  @media (max-width: 350px) {
+    font-size: $very-low-size;
+  }
 }
